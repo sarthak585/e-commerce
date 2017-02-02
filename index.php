@@ -28,7 +28,7 @@ $categoryList = $categoryModel->viewCategory();
 	</div>
 	<div id="welcome"> 
 		<h1>Welcome to your Admin Panel</h1>
-		<p>This is your admin panel by Sarthak and Archi, where you can manage your website files and content</p>
+		<p>This is your admin panel, where you can manage your website files and content</p>
 	</div>
 </body>
 </html>
