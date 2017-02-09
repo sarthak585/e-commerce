@@ -42,6 +42,14 @@
 					<td>Image</td>
 					<td>
 						<input type="file" name="image" id="fileToUpload" value="<?php echo $id ? $productList[$id]['Image'] : ''; ?>">
+						<input type="hidden" name="hiddenimage" value="<?php echo $id ? $productList[$id]['Image'] : ''; ?>">
+						<?php
+							if($id){
+						?>						
+								<img src="../web/images/<?php echo $productList[$id]['Image']; ?>" alt="Smiley face" height="100" width="135" />
+						<?php	
+							}
+						?>	
 					</td>
 				</tr>
 				<tr>
