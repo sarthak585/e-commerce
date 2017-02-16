@@ -1,80 +1,87 @@
-<?php
-	include_once '../models/category_model.php';
-	$categoryModel = new category_model();
-	$categoryList = $categoryModel->viewCategory();
-?>
 <html>
+    <!--HTML Header-->
 	<head>
-		<title>Admin Panel</title>	
+		<title>Admin Panel</title>
 		<link rel="stylesheet" href="../web/css/admin_style.css" />
 		<script language="JavaScript" type="text/javascript">
 			function checkDelete(productId,CategoryId){
 			if(confirm('Are you sure to delete?') == true) {
 			window.location.href = "http://localhost/website/controllers/product.php?action=delete&id="+productId+"&CategoryId="+CategoryId;
-			} 
+			}
 			}
 		</script>
-	</head>	
+	</head>
+    <!--HTML Body-->
 	<body>
+        <!--header portion of the page-->
 		<div id="header">
 			<a href="../index.php"><h1>Welcome to the Admin Panel</h1></a>
-		</div> 
-	<div id="sidebar">
-		<b><font size="5">Welcome:</font></b><h2>Admin</h2>
-		<h2><a href="category_view.php">Categories</a></h2>
-		<h2>Products</h2>
-		<?php
-				foreach ($categoryList as $value){	
-					echo '<h2>';
-						echo '<a href="product_view.php?CategoryId='.$value['CategoryId'].'">';
-							echo $value['Name']; 
-						echo '</a>';
-					echo '</h2>';
-				}		
-			?>
-	</div>
+		</div>
+
+        <!--sidebar portion of the page-->
+        <div id="sidebar">
+            <b><font size="5">Welcome:</font></b><h2>Admin</h2>
+            <h2><a href="category_view.php">Categories</a></h2>
+            <h2>Products</h2>
+            <?php
+                    foreach ($categoryList as $value){
+                        echo '<h2>';
+                            echo '<a href="product_view.php?CategoryId='.$value['CategoryId'].'">';
+                                echo $value['Name'];
+                            echo '</a>';
+                        echo '</h2>';
+                    }
+                ?>
+        </div>
+
+        <!--main content on the page-->
 		<div id="content">
 		<?php include '../controllers/product.php'; ?>
-			<h1>Manage <?php echo $categoryList[$categoryid]['Name'];?></h1>
-			<form enctype="multipart/form-data" method="post" name="updateProduct" action="../controllers/product.php?action=update&id=<?php echo $id; ?>&CategoryId=<?php echo $categoryid;?>">
-			<table id='formView' width="1000" border="0" align="center"> 
-				<tr>
-					<td>Image</td>
-					<td>
-						<input type="file" name="image" id="fileToUpload" value="<?php echo $id ? $productList[$id]['Image'] : ''; ?>">
-						<input type="hidden" name="hiddenimage" value="<?php echo $id ? $productList[$id]['Image'] : ''; ?>">
-						<?php
-							if($id){
-						?>						
-								<img src="../web/images/<?php echo $productList[$id]['Image']; ?>" alt="Smiley face" height="100" width="135" />
-						<?php	
-							}
-						?>	
-					</td>
-				</tr>
-				<tr>
-					<td>Name</td>
-					<td><input type="text" name="name" value="<?php echo $id ? $productList[$id]['Name'] : ''; ?>"></td>
-				</tr>
-				<tr>
-					<td>SKU</td>
-					<td><input type="text" name="sku" value="<?php echo $id ? $productList[$id]['SKU'] : ''; ?>"></td>
-				</tr>
-				<tr>
-					<td>Type</td>
-					<td><input type="text" name="type" value="<?php echo $id ? $productList[$id]['Type'] : ''; ?>"></td>
-				</tr>
-				<tr>
-					<td>Price</td>
-					<td><input type="text" name="price" value="<?php echo $id ? $productList[$id]['Price'] : ''; ?>"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td align="right" style="float:right;"><input type="submit" name="save" value="Save"></td>
-				</tr>
-			</table>
+            <!--Heading - Display Category Name-->
+            <h1>Manage <?php echo $categoryList[$categoryid]['Name'];?></h1>
+
+            <!--Add/Update form-->
+            <form enctype="multipart/form-data" method="post" name="updateProduct" action="../controllers/product.php?action=update&id=<?php echo $id; ?>&CategoryId=<?php echo $categoryid;?>">
+                <table id='formView' width="1000" border="0" align="center">
+                    <tr>
+                        <td>Image</td>
+                        <td>
+                            <input type="file" name="image" id="fileToUpload" value="<?php echo $id ? $productList[$id]['Image'] : ''; ?>">
+                            <input type="hidden" name="hiddenimage" value="<?php echo $id ? $productList[$id]['Image'] : ''; ?>">
+                            <?php
+                                if($id){
+                            ?>
+                                    <img src="../web/images/<?php echo $productList[$id]['Image']; ?>" alt="Smiley face" height="100" width="135" />
+                            <?php
+                                }
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="name" value="<?php echo $id ? $productList[$id]['Name'] : ''; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td>SKU</td>
+                        <td><input type="text" name="sku" value="<?php echo $id ? $productList[$id]['SKU'] : ''; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td><input type="text" name="type" value="<?php echo $id ? $productList[$id]['Type'] : ''; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><input type="text" name="price" value="<?php echo $id ? $productList[$id]['Price'] : ''; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="right" style="float:right;"><input type="submit" name="save" value="Save"></td>
+                    </tr>
+                </table>
 			</form>
-			<table id='listView' width="1000" border="2" align="center"> 
+
+            <!--Listing - products-->
+			<table id='listView' width="1000" border="2" align="center">
 				<tr>
 					<th>Image</th>
 					<th>Name</th>
@@ -83,6 +90,7 @@
 					<th>Price</th>
 					<th>Actions</th>
 				</tr>
+                <!--loop through product data-->
 				<?php					
 					if ($productList){
 						foreach($productList as $productValue) {
