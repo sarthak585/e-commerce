@@ -19,6 +19,7 @@ table {
 	width: auto;
 }
 #content { background:white; }
+.content { color:orange !important;  }
 
 td, th {
 	border: 1px solid #dddddd;
@@ -37,3 +38,11 @@ input[type="submit"] {
 #listView tr:nth-child(even) {
 	background-color: #dddddd;
 }
+
+.loginlink { float: right;
+			color: #3602fd;
+			font-size: 20px;
+			margin-right: 10px;
+			border: 1px solid powderblue;
+			padding: 38px;
+		}

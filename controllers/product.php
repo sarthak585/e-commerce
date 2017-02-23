@@ -21,7 +21,7 @@ $categoryid = (isset($_GET['CategoryId']) && $_GET['CategoryId'] > 0) ? $_GET['C
  * If action is set, process data in db.
  */
 if(isset($_GET['action'])) {
-    /*
+   /*
     * Upload file into folder.
     */
 	$fileName=time()."_".basename($_FILES["image"]["name"]);
