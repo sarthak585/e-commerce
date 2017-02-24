@@ -61,6 +61,10 @@ a{
 	color: #333;
 	text-decoration: none;
 }
+a:hover {
+	color: #333;
+	text-decoration: underline;
+}
 .container{
 	width: 100%;
 	height: 100%;

@@ -19,30 +19,11 @@
 		<link rel="stylesheet" href="../web/css/admin_style.css" />
     </head>
     <body>
-		<?php 	include_once '../header.php';  
-				include_once '../sidebar.php';
+		<?php 	include_once '../header.php';
 		?>	
         <div class="container">
-            <!-- Codrops top bar -->
-            <div class="codrops-top">
-                <a href="">
-                    <strong>&laquo; Previous Demo: </strong>Responsive Content Navigator
-                </a>
-                <span class="right">
-                    <a href=" http://tympanus.net/codrops/2012/03/27/login-and-registration-form-with-html5-and-css3/">
-                        <strong>Back to the Codrops Article</strong>
-                    </a>
-                </span>
-                <div class="clr"></div>
-            </div><!--/ Codrops top bar -->
             <header>
                 <h1>Login and Registration Form</h1>
-				<nav class="codrops-demos">
-					<span>Click <strong>"Join us"</strong> to see the form switch</span>
-					<a href="index.html" class="current-demo">Demo 1</a>
-					<a href="index2.html">Demo 2</a>
-					<a href="index3.html">Demo 3</a>
-				</nav>
             </header>
             <section>				
                 <div id="container_demo" >
