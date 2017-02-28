@@ -4,6 +4,7 @@
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<?php include_once "../config/config.php";?>
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
@@ -13,14 +14,13 @@
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
         <meta name="author" content="Codrops" />
         <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="../web/css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="../web/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="../web/css/animate-custom.css" />
-		<link rel="stylesheet" href="../web/css/admin_style.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>web/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>web/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>web/css/animate-custom.css" />
+		<link rel="stylesheet" href="<?php echo BASE_URL; ?>web/css/admin_style.css" />
     </head>
     <body>
-		<?php 	include_once '../header.php';
-		?>	
+		<?php 	include_once '../header.php';	?>	
         <div class="container">
             <header>
                 <h1>Login and Registration Form</h1>
@@ -32,7 +32,7 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="registration.php" autocomplete="on"> 
+                            <form  action="<?php echo BASE_URL; ?>registration.php" autocomplete="on"> 
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Your email or username </label>
@@ -57,7 +57,7 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  method="post" action="../controllers/registration.php" autocomplete="on"> 
+                            <form  method="post" action="<?php echo BASE_URL; ?>controllers/registration.php" autocomplete="on"> 
                                 <h1> Sign up </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>

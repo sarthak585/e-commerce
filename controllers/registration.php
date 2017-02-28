@@ -2,7 +2,7 @@
 	/*
 	* Include necessary files.
 	*/
-	include_once '../models/registration_model.php';
+	include_once BASE_URL.'models/registration_model.php';
 
 	/*
 	* Initialize objects.
@@ -14,5 +14,5 @@
 	$userModel->addUser($userData);
 	
 	// Redirect back to view.
-	header('location: ../views/registration_view.php');
+	header('location: '.BASE_URL.'views/registration_view.php');
 ?>
