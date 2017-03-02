@@ -32,7 +32,12 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="<?php echo BASE_URL; ?>registration.php" autocomplete="on"> 
+                            <?php
+                            if (isset($error)){
+                                echo $error;
+                            }
+                            ?>
+                            <form  method="post" action="<?php echo BASE_URL; ?>controllers/login.php" autocomplete="on"> 
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Your email or username </label>

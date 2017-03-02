@@ -10,7 +10,9 @@
 }
 /* CSS reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
-	margin:0;
+	margin:auto;
+	text-align: inherit;
+	position: relative;
 	padding:0;
 }
 html,body {
@@ -58,8 +60,8 @@ body{
 	overflow-y: scroll;
 }
 a{
-	color: #333;
-	text-decoration: none;
+	color: #7cbcd6;
+    text-decoration: blink;
 }
 a:hover {
 	color: #333;

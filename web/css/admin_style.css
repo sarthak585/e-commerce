@@ -6,7 +6,7 @@ body{background:gray; padding:0; margin:0;}
 
 #sidebar h2 {text-align:center; font-size:1.5em; color:red;}
 
-#header h1{color:blue; font-size:2em; font-family:Copperplate Gothic Bold; text-align:center; padding-top:20px;}
+#header h1{color:blue; font-size:2em; font-family: inherit; text-align:center; padding-top:30px;}
 
 #content h1{margin:0;}
 
@@ -40,9 +40,16 @@ input[type="submit"] {
 }
 
 .loginlink { float: right;
-			color: #3602fd;
-			font-size: 20px;
-			margin-right: 10px;
-			border: 1px solid powderblue;
-			padding: 38px;
-		}
+			cursor: pointer;
+		    color: #7cbcd6;
+		    font-size: 20px;
+		    margin-right: 0;
+		    border: 4px outset #e9e8ec;
+		    padding: 35px;
+}
+.loginlink a{
+	cursor: pointer;
+}
+a:hover {
+    text-decoration: underline;
+}
