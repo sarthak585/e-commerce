@@ -59,8 +59,11 @@ body{
 	color: #1d3c41;
 	overflow-y: scroll;
 }
+a.welcome{
+	color: #000000 !important;
+}
 a{
-	color: #7cbcd6;
+	color: #fff;
     text-decoration: blink;
 }
 a:hover {

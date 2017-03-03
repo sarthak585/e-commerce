@@ -17,10 +17,14 @@
 
 	// Redirect back to view.
 	if ($user){
-		header('location: '.BASE_URL.'../index.php');
+		session_start();
+		$_SESSION['username']=$user['UserName'];
+		$_SESSION['isAuthenticated']=true;
+		
+		header('location: ../index.php');
 	}
 	else {
 		$error = "Username or Password Invalid";
-		header('location: '.BASE_URL.'views/registration_view.php');
+		header('location: ../views/registration_view.php?iserror=true');
 	}	
 ?>

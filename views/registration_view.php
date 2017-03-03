@@ -33,8 +33,8 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <?php
-                            if (isset($error)){
-                                echo $error;
+                            if (isset($_GET['iserror']) && $_GET['iserror']==true){
+                                echo "Invalid Username or Password";
                             }
                             ?>
                             <form  method="post" action="<?php echo BASE_URL; ?>controllers/login.php" autocomplete="on"> 

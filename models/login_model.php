@@ -12,8 +12,8 @@ class login_model{
      * @return object $user.
      */
 	function getUserByUsernameAndPassword ($username, $password) {
-		$sql = "Select * from user WHERE UserName=".$username."and Password=".$password;
-	 	echo $sql; exit;
+		$sql = 'SELECT * FROM `user` WHERE UserName="'.$username.'" AND Password="'.$password.'"';
+	 	//echo $sql; exit;
 	 	$result = mysql_query($sql);
 
 		return mysql_fetch_assoc($result);

@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['isAuthenticated'])||($_SESSION['isAuthenticated']!=true)) {
+	echo "Access Denied";
+	exit;
+}
+?>
 <html>
 	<head>
 		<title>Admin Panel</title>	
@@ -8,7 +17,7 @@
 			include_once 'sidebar.php';
 	?>		
 	<div class="content" id="welcome"> 
-		<h1>Welcome to your Admin Panel</h1>
+		<h1>Welcome to your Admin Panel <?php echo $_SESSION['username'];?></h1>
 		<p>This is your admin panel, where you can manage your website files and content</p>
 	</div>
 </body>
