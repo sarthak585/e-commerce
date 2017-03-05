@@ -14,7 +14,7 @@ class product_model {
     function viewProduct($categoryid) {
 	$sql = 'SELECT * FROM product where CategoryId='.$categoryid;
 		$result = mysql_query($sql);
-		
+
 		if (mysql_num_rows($result) > 0) {
 			$rows = array();
 
@@ -37,7 +37,7 @@ class product_model {
 	function addProduct($productAray) {
 		$sql = "INSERT INTO product(Name, SKU, Price, Type, Image, CategoryId) VALUES ('".$productAray['Name']."','".$productAray['SKU']."','".$productAray['Price']."','".$productAray['Type']."','".$productAray['Image']."','".$productAray['CategoryId']."')";
 	 	$result = mysql_query($sql);
-		
+
 		return mysql_affected_rows();
 	}
 
@@ -50,7 +50,7 @@ class product_model {
 	function editProduct($id, $productAray) {
 		$sql = "UPDATE product SET Image = '".$productAray['Image']."',Name = '".$productAray['Name']."', SKU = '".$productAray['SKU']."', Type = '".$productAray['Type']."', Price = ".$productAray['Price']." WHERE ProductId= ".$id;
 		$result = mysql_query($sql);
-		
+
 		return mysql_affected_rows();
 	}
 

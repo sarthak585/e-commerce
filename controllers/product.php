@@ -26,27 +26,27 @@ if(isset($_GET['action'])) {
     */
 	$fileName=time()."_".basename($_FILES["image"]["name"]);
 	move_uploaded_file($_FILES["image"]["tmp_name"],"../web/images/".$fileName);
-	
+
 	// Prepare an array for insert and update.
 	$postData = array('SKU' =>$_POST['sku'],'Type' =>$_POST['type'],'Price' =>$_POST['price'],'Name' => $_POST['name'],'Image' => $fileName,'CategoryId' => $categoryid);
-	
+
 	if ($_GET['action'] == 'update'){
         // If action is update and product id is there, update data into db using model function.
 		if($id) {
             // If image has not been updated, then update existing image from hidden input.
-			if($_FILES["image"]["name"] == '' && $_POST["hiddenimage"] != ''){	
+			if($_FILES["image"]["name"] == '' && $_POST["hiddenimage"] != ''){
 				$postData['Image'] = $_POST["hiddenimage"];
 			}
-			$productModel->editProduct($id, $postData);			
+			$productModel->editProduct($id, $postData);
 		}
         // If action is insert, insert data into db using model function.
-		else {		
-			$productModel->addProduct($postData);			
+		else {
+			$productModel->addProduct($postData);
 		}
 	}
     // If action is delete, delete data into db using model function.
-	else if ($_GET['action'] == 'delete') {				
-		$productModel->deleteProduct($id);			
+	else if ($_GET['action'] == 'delete') {
+		$productModel->deleteProduct($id);
 	}
 
 	// Redirect back to view.

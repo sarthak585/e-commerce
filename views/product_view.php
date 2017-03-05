@@ -1,13 +1,13 @@
 <html>
     <!--HTML Header-->
 	<head>
-		<title>Admin Panel</title>	
+		<title>Admin Panel</title>
 		<link rel="stylesheet" href="../web/css/admin_style.css" />
 		<script language="JavaScript" type="text/javascript">
 			function checkDelete(productId,CategoryId){
 			if(confirm('Are you sure to delete?') == true) {
 			window.location.href = "http://localhost/website/controllers/product.php?action=delete&id="+productId+"&CategoryId="+CategoryId;
-			} 
+			}
 			}
 		</script>
 	</head>
@@ -81,7 +81,7 @@
 			</form>
 
             <!--Listing - products-->
-			<table id='listView' width="1000" border="2" align="center"> 
+			<table id='listView' width="1000" border="2" align="center">
 				<tr>
 					<th>Image</th>
 					<th>Name</th>
