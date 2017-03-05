@@ -5,14 +5,16 @@
 include_once 'connect_db.php';
 
 class registration_model{
-    /*
+
+    /**
      * Run Insert Query to insert data into table.
-     * @param array $productArray.
-     * @return status of affected rows.
+     * @param $userData
+     * @return int
      */
-	function addUser($userAray) {
-		$sql = "INSERT INTO user(UserName, Password, Email) VALUES ('".$userAray['UserName']."','".$userAray['Password']."','".$userAray['Email']."')";
-	 	$result = mysql_query($sql);
+    function addUser($userData) {
+		$sql = "INSERT INTO user(FirstName, LastName, Phone, Username, Password, Email) 
+                VALUES ('".$userData['FirstName']."','".$userData['LastName']."','".$userData['Phone']."','".$userData['UserName']."','".$userData['Password']."','".$userData['Email']."')";
+	 	mysql_query($sql);
 
 		return mysql_affected_rows();
 	}

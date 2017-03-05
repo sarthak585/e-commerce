@@ -1,11 +1,12 @@
 <?php
+    include_once '../config/config.php';
 	include_once '../models/category_model.php';
 	$categoryModel = new category_model();
 	$categoryList = $categoryModel->viewCategory();
 ?>
 <html>
 	<head>
-		<title>Admin Panel</title>	
+		<title>Category View</title>
 		<link rel="stylesheet" href="../web/css/admin_style.css" />
 		<script language="JavaScript" type="text/javascript">
 			function checkDelete(CategoryId){
@@ -16,23 +17,10 @@
 		</script>
 	</head>	
 	<body>
-		<div id="header">
-			<a href="../index.php"><h1>Welcome to the Admin Panel</h1></a>
-		</div> 
-			<div id="sidebar">
-		<b><font size="5">Welcome:</font></b><h2>Admin</h2>
-		<h2><a href="category_view.php">Categories</a></h2>
-		<h2>Products</h2>
-		<?php
-				foreach ($categoryList as $value){	
-					echo '<h2>';
-						echo '<a href="product_view.php?CategoryId='.$value['CategoryId'].'">';
-							echo $value['Name']; 
-						echo '</a>';
-					echo '</h2>';
-				}
-			?>
-	</div>
+    <?php
+    include_once     '../header.php';
+    include_once '../sidebar.php';
+    ?>
 		<div id="content">
 		<?php include '../controllers/category.php'; ?>
 			<h1>Manage Categories</h1>
@@ -49,7 +37,7 @@
 				</tr>
 				<tr>
 					<td>IsActive</td>
-					<td><input type="checkbox" name="IsActive"></td>
+					<td><input type="checkbox" name="IsActive" <?php echo ($id && $categoryList[$id]['IsActive']) ? 'checked="checked"' : ''; ?>></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -73,7 +61,7 @@
 								<td><?php echo $categoryValue['CategoryId'];?></td>
 								<td><?php echo $categoryValue['Name'];?></td>
 								<td><?php echo $categoryValue['Description'];?></td>
-								<td><?php echo $categoryValue['IsActive'];?></td>
+								<td><?php echo $categoryValue['IsActive'] ? 'Yes' : 'No' ;?></td>
 								<td>
 									<a href="category_view.php?id=<?php echo $categoryValue['CategoryId']; ?>">
 										<img src="../web/images/admin/Edit.png" height="25px" width="25px"></a>

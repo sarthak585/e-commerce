@@ -1,11 +1,5 @@
 <?php
-
-session_start();
-
-if (!isset($_SESSION['isAuthenticated'])||($_SESSION['isAuthenticated']!=true)) {
-	echo "Access Denied";
-	exit;
-}
+include_once 'config/config.php';
 ?>
 <html>
 	<head>
@@ -13,8 +7,9 @@ if (!isset($_SESSION['isAuthenticated'])||($_SESSION['isAuthenticated']!=true)) 
 		<link rel="stylesheet" href="web/css/admin_style.css" />
 	</head>	
 <body>
-	<?php 	include_once 'header.php';  
-			include_once 'sidebar.php';
+	<?php
+        include_once     'header.php';
+		include_once 'sidebar.php';
 	?>		
 	<div class="content" id="welcome"> 
 		<h1>Welcome to your Admin Panel <?php echo $_SESSION['username'];?></h1>

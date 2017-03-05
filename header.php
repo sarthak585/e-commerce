@@ -2,10 +2,6 @@
 
 include_once "config/config.php";
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
 if (isset($_SESSION['isAuthenticated']) && ($_SESSION['isAuthenticated']==true)) {
 	$login_link_name='Logout';
 	$login_link='controllers/logout.php';	

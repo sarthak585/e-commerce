@@ -1,10 +1,13 @@
+<?php
+$doNotAuthenticate = true;
+include_once "../config/config.php";
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<?php include_once "../config/config.php";?>
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
@@ -63,14 +66,26 @@
 
                         <div id="register" class="animate form">
                             <form  method="post" action="<?php echo BASE_URL; ?>controllers/registration.php" autocomplete="on"> 
-                                <h1> Sign up </h1> 
+                                <h1> Sign up </h1>
+                                <p>
+                                    <label for="firstname" class="youmail" data-icon="e" >First Name</label>
+                                    <input id="firstname" name="firstname" required="required" type="text" placeholder="First Name"/>
+                                </p>
+                                <p>
+                                    <label for="lastname" class="youmail" data-icon="e" >Last Name</label>
+                                    <input id="lastname" name="lastname" required="required" type="text" placeholder="Last Name"/>
+                                </p>
+                                <p>
+                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
+                                </p>
+                                <p>
+                                    <label for="phone" class="youmail" data-icon="e" >Phone</label>
+                                    <input id="phone" name="phone" required="required" type="number" placeholder="Phone Number"/>
+                                </p>
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
                                     <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-                                </p>
-                                <p> 
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
                                 </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
