@@ -1,6 +1,31 @@
 <?php
-    include_once '../controller/test.php';
-    $controllerTest = new controllerTest();
+    //connect db.
+    $conn = mysqli_connect('localhost', 'root', '');
+    $db = mysqli_select_db($conn, 'test');
+
+    //select query and create list.
+    $sql = 'SELECT * FROM testing';
+    $rs = mysqli_query($conn, $sql);
+
+    $list = array();
+    while($row = mysqli_fetch_assoc($rs)) {
+        $list[] = $row;
+    }
+
+    //insert query.
+    if(!empty($_POST)) {
+        if($_POST['submit'] == 'Add') {
+            $sql = "INSERT INTO testing(name) VALUES ('" . $_POST['name'] . "')";
+            $rs = mysqli_query($conn, $sql);
+        } else if($_POST['submit'] == 'Edit') {
+            $sql = "UPDATE testing SET name = '" . $_POST['name'] . "' WHERE id = ".$_POST['id'];
+            $rs = mysqli_query($conn, $sql);
+        } else if($_POST['submit'] == 'Delete') {
+            $sql = "DELETE FROM testing WHERE id = ". $_POST['id'];
+            $rs = mysqli_query($conn, $sql);
+        }
+        header('location: test.php');
+    }
 ?>
 <html>
     <head>
@@ -24,7 +49,7 @@
 <!--                <th>Actions</th>-->
             </tr>
             <?php
-                foreach ($controllerTest->viewTest() as $row) {
+                foreach ($list as $row) {
                     ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
