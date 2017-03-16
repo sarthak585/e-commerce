@@ -67,37 +67,49 @@ include_once "../config/config.php";
                         <div id="register" class="animate form">
                             <form  method="post" action="<?php echo BASE_URL; ?>controllers/registration.php" autocomplete="on"> 
                                 <h1> Sign up </h1>
-                                <p>
-                                    <label for="firstname" class="youmail" data-icon="e" >First Name</label>
-                                    <input id="firstname" name="firstname" required="required" type="text" placeholder="First Name"/>
-                                </p>
-                                <p>
-                                    <label for="lastname" class="youmail" data-icon="e" >Last Name</label>
-                                    <input id="lastname" name="lastname" required="required" type="text" placeholder="Last Name"/>
-                                </p>
-                                <p>
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
-                                </p>
-                                <p>
-                                    <label for="phone" class="youmail" data-icon="e" >Phone</label>
-                                    <input id="phone" name="phone" required="required" type="number" placeholder="Phone Number"/>
-                                </p>
-                                <p> 
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p class="signin button"> 
-									<input type="submit" value="Sign up"/> 
-								</p>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <label for="firstname" class="youmail" data-icon="e" >First Name</label>
+                                                <input id="firstname" name="firstname" required="required" type="text" placeholder="First Name"/>
+                                            </p>
+                                            <p>
+                                                <label for="lastname" class="youmail" data-icon="e" >Last Name</label>
+                                                <input id="lastname" name="lastname" required="required" type="text" placeholder="Last Name"/>
+                                            </p>    
+                                            <p>
+                                                <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+                                                <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
+                                            </p>
+                                            <p>
+                                                <label for="phone" class="youmail" data-icon="e" >Phone</label>
+                                                <input id="phone" name="phone" required="required" type="number" placeholder="Phone Number"/>
+                                            </p>
+                                       </td>
+                                        <td>
+                                            <p> 
+                                                <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                                                <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                                            </p>
+                                            <p> 
+                                                <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                                                <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                            </p>
+                                            <p> 
+                                                <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                                                <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                            </p>
+                                            <p class="signin button"> 
+                                                <input type="submit" value="Sign up"/> 
+                                            </p>
+                                       </td>
+                                    </tr>
+
+                                </table>
+                                                   
+                                
+                                
                                 <p class="change_link">  
 									Already a member ?
 									<a href="#tologin" class="to_register"> Go and log in </a>
