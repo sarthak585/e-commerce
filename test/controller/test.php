@@ -1,6 +1,5 @@
 <?php
 include_once '../model/test.php';
-$controllerTest = new controllerTest();
 
 class controllerTest
 {
@@ -15,7 +14,7 @@ class controllerTest
         }
     }
 
-    public function selectTest()
+    public function viewTest()
     {
         $list = $this->modelTest->selectTest();
 
