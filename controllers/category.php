@@ -20,12 +20,18 @@ class CategoryController {
         }
     }
 
+    /**
+     * @return array|int
+     */
     public function getCategory() {
         $categoryList = $this->categoryModel->viewCategory();
 
         return $categoryList;
     }
 
+    /**
+     * @param $requestData
+     */
     public function postCategory($requestData) {
         $postData = array('Name' =>$requestData['Name'],'Description' =>$requestData['Description'],'IsActive' => isset($requestData['IsActive'])?1:0);
 
