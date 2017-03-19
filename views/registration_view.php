@@ -33,7 +33,7 @@ include_once "../config/config.php";
                     <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
+                    <div id="wrapper" class="login_wrapper">
                         <div id="login" class="animate form">
                             <?php
                             if (isset($_GET['iserror']) && $_GET['iserror']==true){
@@ -63,38 +63,57 @@ include_once "../config/config.php";
 								</p>
                             </form>
                         </div>
-
+                    </div>
+                    <div id="wrapper">
                         <div id="register" class="animate form">
                             <form  method="post" action="<?php echo BASE_URL; ?>controllers/registration.php" autocomplete="on"> 
                                 <h1> Sign up </h1>
-                                <table>
+                                <table cellpadding="10" cellspacing="10">
                                     <tr>
-                                        <td>
-                                            <p>
-                                                <label for="firstname" class="youmail" data-icon="e" >First Name</label>
-                                                <input id="firstname" name="firstname" required="required" type="text" placeholder="First Name"/>
-                                            </p>
-                                            <p>
-                                                <label for="lastname" class="youmail" data-icon="e" >Last Name</label>
-                                                <input id="lastname" name="lastname" required="required" type="text" placeholder="Last Name"/>
-                                            </p>    
-                                            <p>
-                                                <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                                <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
-                                            </p>
-                                            <p>
-                                                <label for="phone" class="youmail" data-icon="e" >Phone</label>
-                                                <input id="phone" name="phone" required="required" type="number" placeholder="Phone Number"/>
-                                            </p>
+                                        <td width="50%" class="signup_column_top">
+                                            <table cellpadding="0" cellspacing="0" width="100%">
+                                                <tr>
+                                                    <td width="30%">
+                                                        <label for="firstname" class="youmail">First Name</label>
+                                                    </td>
+                                                    <td width="70%">
+                                                        <input id="firstname" name="firstname" required="required" type="text" placeholder="First Name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>        
+                                                    <td width="30%">
+                                                        <label for="lastname" class="youmail">Last Name</label>
+                                                    </td>
+                                                    <td width="70%">
+                                                        <input id="lastname" name="lastname" required="required" type="text" placeholder="Last Name"/>
+                                                    </td>
+                                                </tr>        
+                                                <tr>
+                                                    <td width="30%">
+                                                        <label for="emailsignup" class="youmail" data-icon="e"> Your email</label>
+                                                    </td>
+                                                    <td width="70%">
+                                                        <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>    
+                                                    <td width="30%">    
+                                                        <label for="phone" class="youmail" data-icon="p">Phone</label>
+                                                    </td>
+                                                    <td width="70%">
+                                                        <input id="phone" name="phone" required="required" type="number" placeholder="Phone Number"/>                                          
+                                                    </td>
+                                                </tr>
+                                            </table>
                                        </td>
-                                        <td>
+                                        <td width="50%">
                                             <p> 
                                                 <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
                                                 <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
                                             </p>
                                             <p> 
                                                 <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                                <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                                <input id="passwordsignup" name="passwordsignup" required="required" type="passwordsignuprd" placeholder="eg. X8df!90EO"/>
                                             </p>
                                             <p> 
                                                 <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>

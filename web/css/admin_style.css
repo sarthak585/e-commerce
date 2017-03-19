@@ -16,7 +16,7 @@ body{background:gray; padding:0; margin:0;}
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
-	width: auto;
+	width: 100%;
 }
 #content { background:white; }
 .content { color:orange !important;  }
