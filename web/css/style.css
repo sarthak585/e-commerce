@@ -34,12 +34,13 @@ a.hiddenanchor{
 }
 /** The wrapper that will contain our two forms **/
 #wrapper{
-	width: 60%;
-	right: 0px;
-	min-height: 560px;	
-	margin: 0px auto;	
-	width: 500px;
+	width: 75%;
+	right: 0px;	
+	margin: 0px auto;
 	position: relative;	
+}
+#wrapper.login_wrapper{
+	width: 500px !important;
 }
 /**** Styling the form elements **/
 
@@ -140,6 +141,15 @@ input {
 } 
 
 /** the magic icon trick ! **/
+#register [data-icon]:after {
+    content: attr(data-icon);
+    font-family: 'FontomasCustomRegular';
+    color: rgb(106, 159, 171);
+    position: absolute;
+    left: 133px;
+    top: 6px;
+	width: 30px;
+}
 [data-icon]:after {
     content: attr(data-icon);
     font-family: 'FontomasCustomRegular';
@@ -149,7 +159,6 @@ input {
     top: 35px;
 	width: 30px;
 }
-
 /*styling both submit buttons */
 #wrapper p.button input{
 	width: 30%;
@@ -219,7 +228,12 @@ p.signin.button{
 
 
 /*styling the links to change from one form to another */
-
+#register p.change_link{
+	margin-left: 0px !important;
+	left: -55px !important;
+	padding: 20px 55px 20px 55px !important;
+	width: 100% !important;
+}
 p.change_link{
 	position: absolute;
    	margin-left: -30px;
@@ -382,4 +396,8 @@ p.change_link{
 	position: absolute;
 	height: 90px;
 	background: transparent;
+}
+.signup_column_top {
+	padding-top: 0px;
+	top: -40px; 
 }

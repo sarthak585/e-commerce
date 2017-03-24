@@ -1,8 +1,11 @@
 <?php
     include_once '../config/config.php';
-	include_once '../models/category_model.php';
-	$categoryModel = new category_model();
-	$categoryList = $categoryModel->viewCategory();
+
+    include_once '../controllers/category.php';
+	$categoryController = new CategoryController();
+
+	$categoryList = $categoryController->getCategory();
+    $id = $categoryController->id;
 ?>
 <html>
 	<head>
@@ -11,7 +14,7 @@
 		<script language="JavaScript" type="text/javascript">
 			function checkDelete(CategoryId){
 				if(confirm('Are you sure to delete?') == true) {
-					window.location.href = "http://localhost/website/controllers/category.php?action=delete&id="+CategoryId;
+					window.location.href = "<?php echo BASE_URL; ?>views/category_view.php?action=delete&id="+CategoryId;
 				} 
 			}
 		</script>
@@ -22,10 +25,9 @@
     include_once '../sidebar.php';
     ?>
 		<div id="content">
-		<?php include '../controllers/category.php'; ?>
 			<h1>Manage Categories</h1>
-			<form enctype="multipart/form-data" method="post" name="updateCategory" action="../controllers/category.php?action=update&id=<?php echo $id; ?>">
-			<table id='formView' width="1000" border="0" align="center"> 
+			<form enctype="multipart/form-data" method="post" name="updateCategory" action="<?php echo BASE_URL; ?>views/category_view.php?action=update&id=<?php echo $id; ?>">
+			<table id='formView' border="0" align="center">
 				
 				<tr>
 					<td>Name</td>
