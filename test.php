@@ -14,9 +14,14 @@
 
     //insert query.
     if(!empty($_POST)) {
-        if($_POST['submit'] == 'Add') {
+        if($_POST['addbutton'] == 'Add') {
             $sql = "INSERT INTO testing(name) VALUES ('" . $_POST['name'] . "')";
             $rs = mysqli_query($conn, $sql);
+			
+			$id = mysqli_insert_id($conn);
+			
+			echo json_encode(array('id' => $id, 'name' => $_POST['name']));
+			exit;
         } else if($_POST['submit'] == 'Edit') {
             $sql = "UPDATE testing SET name = '" . $_POST['name'] . "' WHERE id = ".$_POST['id'];
             $rs = mysqli_query($conn, $sql);
@@ -30,19 +35,38 @@
 <html>
     <head>
         <title>Test Site</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$('.addbutton').click(function(){
+				$.ajax({
+				  method: "POST",
+				  url: "http://localhost/website/test.php",
+				  dataType: 'json',
+				  data: { name: $('form#testForm').find('input#name').val(), 'addbutton': 'Add' },
+				  success: function(response) {
+						$('.listTable').append('<tr><td>'+response.id+'</td><td>'+response.name+'</td></tr>');
+						$('#notification-bar').text('The page has been successfully loaded');
+				  }
+				  
+				});
+			});
+		});
+		</script>
     </head>
     <body>
+		<div id="notification-bar"></div>
         <!-- Insert and Update Form.-->
-        <form method="post" name="testForm">
-            <input name="name" type="text" value="" placeholder="Enter Name">
+        <form method="post" name="testForm" id="testForm">
+            <input name="name" id="name" type="text" value="" placeholder="Enter Name">
             <input name="id" type="number" value="" placeholder="Enter this value for edit and delete">
-            <input name="submit" type="submit" value="Add" placeholder="Save">
+            <input name="addbutton" class="addbutton" type="button" value="Add" placeholder="Save">
             <input name="submit" type="submit" value="Edit" placeholder="Save">
             <input name="submit" type="submit" value="Delete" placeholder="Save">
         </form>
 
         <!-- List the Data -->
-        <table border="1" cellpadding="0" cellspacing="0">
+        <table border="1" cellpadding="0" cellspacing="0" class="listTable">
             <tr>
                 <th>Id</th>
                 <th>Name</th>
