@@ -27,7 +27,10 @@ if($_POST){
 				  data: { 'number': $('form#table').find('input#number').val()},
 				  success: function(response) {
 						$('#output').html(response);
-					}
+					},
+				  error: function(response)	{
+				  		alert('Technical Error');
+				  }
 				});
 			});
 		});
