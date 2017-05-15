@@ -20,7 +20,7 @@
 			
 			$id = mysqli_insert_id($conn);
 			
-			echo /json_encode(array('id' => $id, 'name' => $_POST['name']));
+			echo json_encode(array('id' => $id, 'name' => $_POST['name']));
 			exit;
         } else if($_POST['submit'] == 'Edit') {
             $sql = "UPDATE testing SET name = '" . $_POST['name'] . "' WHERE id = ".$_POST['id'];
