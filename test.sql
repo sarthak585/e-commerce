@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2017 at 08:13 AM
+-- Generation Time: May 22, 2017 at 04:45 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.5.38
 
@@ -28,20 +28,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `testing` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `testing`
 --
 
-INSERT INTO `testing` (`id`, `name`) VALUES
-(1, 'SARTHAK'),
-(2, 'BHARAT'),
-(3, 'RAKSHA'),
-(4, 'ARCHI'),
-(5, 'AMEE'),
-(6, 'RUDRA');
+INSERT INTO `testing` (`id`, `name`, `image`) VALUES
+(1, 'Archi', '1495307283_Chrysanthemum.jpg'),
+(2, 'Amee', '1495359516_Lighthouse.jpg'),
+(6, 'Higher', '1495360240_20160913_175536.jpg');
 
 --
 -- Indexes for dumped tables
