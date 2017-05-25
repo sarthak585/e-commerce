@@ -1,5 +1,7 @@
 <?php
-include_once 'Person.php';
+
+namespace Employee;
+use Person;
 
 class Employee extends Person {
     public $salary;

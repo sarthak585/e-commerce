@@ -188,11 +188,11 @@
 				<div class="col-md-12 column">
 					<div class="controls">	
 						<ul>
-							<li class="filter <?php if(!$categoryid){ echo 'active';} ?>" data-filter=""><a href="http://localhost/website/event/snaps3.php">All</a></li>							
+							<li class="filter" data-filter="all">All</li>							
 							<?php
 								foreach ($category as $row) {
 								?>								
-								<li class="filter <?php if($categoryid == $row['CategoryId']){ echo 'active';} ?>" data-filter="category_<?php echo $row['CategoryId']; ?>"><a href="http://localhost/website/event/snaps3.php?CategoryId=<?php echo $row['CategoryId']; ?>"><?php echo $row['Name']; ?></a></li>
+								<li class="filter" data-filter="category_<?php echo $row['CategoryId']; ?>"><?php echo $row['Name']; ?></li>
 								<?php
 								}
 							?>	
@@ -203,7 +203,7 @@
 							<?php
 								foreach ($product as $row) {
 								?>	
-								<li class="mix category_1 col-md-2">
+								<li class="mix category_<?php echo $row['CategoryId']; ?> col-md-2">
 								<div class="portfolio">
 									<img src="../web/images/<?php echo $row['Image']; ?>" alt="" width="216px" height="238px"/>
 									<div class="hover">

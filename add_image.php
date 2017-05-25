@@ -26,7 +26,8 @@
                 */
                 $fileName = time()."_".basename($_FILES["image"]["name"]);
                 move_uploaded_file($_FILES["image"]["tmp_name"],"web/images/".$fileName);
-                
+                print_r($fileName);
+                exit;
                 $sql = "INSERT INTO testing(name,image) VALUES ('" . $_POST['name'] . "','" .$fileName. "')";
                 $rs = mysqli_query($conn, $sql);
                 $id = mysqli_insert_id($conn);
