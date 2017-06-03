@@ -1,5 +1,6 @@
 <?php
 
+namespace Person;
 abstract class Person {
     private static $id;
 
